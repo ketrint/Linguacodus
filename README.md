@@ -1,6 +1,3 @@
-Certainly! Below is the GitHub-flavored Markdown version of the README:
-
-
 # Machine Learning Pipelines Synthesis with Large Language Models
 
 ## Abstract
