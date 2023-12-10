@@ -21,7 +21,7 @@ To use our framework, follow the steps outlined below:
 
 ```bash
 git clone https://github.com/Deltax2016/NL4ML.git
-
+```
 
 2. Run the Framework: Execute the inference notebook to initiate the pipeline for transforming natural language task descriptions into code.
 
