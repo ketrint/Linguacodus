@@ -25,11 +25,6 @@ git clone https://github.com/Deltax2016/NL4ML.git
 
 2. Run the Framework: Execute the inference notebook to initiate the pipeline for transforming natural language task descriptions into code.
 
-
-## Experimental Evaluations
-
-Our framework has undergone rigorous experimental evaluations to assess its effectiveness. To reproduce these experiments and explore the results, refer to the [Experiment Notebook](experiments/experiment_notebook.ipynb) in the experiments directory.
-
 ## Potential Applications
 
 Our framework has promising applications in various domains, including:
