@@ -29,7 +29,3 @@ Our framework has promising applications in various domains, including:
 - Automated Machine Learning (AutoML)
 - Natural Language Processing (NLP)
 - Data Science and Analytics
-
-Feel free to explore and adapt our framework to suit your specific use cases and contribute to the advancement of machine learning.
-
-For detailed documentation and additional resources, please visit our [Wiki](https://github.com/your-username/machine-learning-pipelines/wiki).
