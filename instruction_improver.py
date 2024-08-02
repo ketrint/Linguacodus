@@ -1,7 +1,15 @@
 import openai
 import csv
+import os
+from os.path import join, dirname
+from dotenv import load_dotenv
 
-openai.api_key = "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"
+# Loading env variables
+dotenv_path = join(dirname(__file__), '.env')
+load_dotenv(dotenv_path)
+
+openai_api_key = os.environ["OPENAI_API_KEY"]
+openai.api_key = openai_api_key
 
 def create_prompt(row):
     return f"""You are a researcher tasked with investigating the 3 options of instruction for solving this machine learning task. Task: {row['task']} The {row['data_type']} data is used for the problem. The metric type is {row['metric']} for the problem.
