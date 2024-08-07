@@ -11,6 +11,7 @@ from os.path import join, dirname
 from dotenv import load_dotenv
 
 INPUT_FILEPATH = './data/results.csv'
+OUTPUT_FILEPATH = './data/output.csv'
 
 # Load environment variables
 dotenv_path = join(dirname(__file__), '.env')
@@ -111,7 +112,7 @@ def main():
                 print("Skipping row due to missing initial response.")
 
     # Write results to the output CSV file
-    with open('output.csv', 'w', newline='') as csv_file:
+    with open(OUTPUT_FILEPATH, 'w', newline='') as csv_file:
         fieldnames = ['task', 'data_type', 'metric', 'data_card', 'result', 'submission', 'link']
         writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
         writer.writeheader()
