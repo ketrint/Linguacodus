@@ -1,14 +1,14 @@
 # Machine Learning Pipelines Synthesis with Large Language Models
 
-## Abstract
+Paper official repository.
 
-In the realm of machine learning, seamlessly translating natural language descriptions into compilable code is a longstanding challenge. This paper presents a novel framework that addresses this challenge by introducing a pipeline capable of iteratively transforming natural language task descriptions into code through high-level machine learning instructions. Central to this framework is the fine-tuning of the Llama large language model, enabling it to rank different solutions for various problems and select an appropriate fit for a given task. We also cover the fine-tuning process and provide insights into transforming natural language descriptions into code. Our approach marks a significant step towards automating code generation, bridging the gap between task descriptions and executable code, and holds promise for advancing machine learning applications across diverse domains. We showcase the effectiveness of our framework through experimental evaluations and discuss its potential applications in various domains, highlighting its implications for advancing the field of machine learning.
+Automatic transformation of Machine Learning (ML) task natural description into Python code through the textual instruction.
 
-## Main Contributions
+## Features
+- **Instruction Generation**: Creates detailed instructions for machine learning task solution using provided data.
+- **Instruction Improvement**: Analyzes and refines the generated instructions to ensure they are logical and error-free.
+- **Flexible Configuration**: Easily customizable prompts and options to suit various machine learning tasks.
 
-1. **A Controllable Transformation Framework**: We introduce a framework for the controlled transformation of ML task natural language descriptions into suitable high-level solution instructions. The framework involves fine-tuning the Llama-2 model using pairs of ML task descriptions and instructions retrieved with GPT-3.5.
-
-2. **Instruction-Based Sequential Generation**: We demonstrate that executing instructions for sequential generation leads to producing compilable code backed by promising results based on evaluation metrics.
 
 ## Getting Started
 
@@ -17,15 +17,53 @@ To use our framework, follow the steps outlined below:
 1. **Clone the Repository**: Begin by cloning this repository to your local machine.
 
 ```bash
-git clone https://github.com/Deltax2016/NL4ML.git
+git clone https://github.com/ketrint/Linguacodus.git
+
+cd Linguacodus
 ```
 
-2. Run the Framework: Execute the inference notebook to initiate the pipeline for transforming natural language task descriptions into code.
+2. **Create a Virtual Environment**
+```bash
+python -m venv env
+source env/bin/activate  # On Windows use `env\Scripts\activate`
+```
+
+3. **Install Required Packages**
+```bash
+pip install -r requirements.txt
+```
+
+4. **Set Up OpenAI API Key**
+- Create a .env file in the root directory of the project.
+- Add your OpenAI API key to the .env file:
+
+```env
+OPENAI_API_KEY=your_openai_api_key_here
+```
+
+## Usage
+
+**Llama 2 fine-tune**: fine-tune Llama 2 model to generate instructions by natural language tasks decriptions.
+```bash
+python llamafinetune.py
+```
+
+**Llama 2 inference**: infer top-3 instructions for a given ML task .
+```bash
+python llamainference.py
+```
+
+**Instructions refinement**: choose the best out of three generated instructions and improve it.
+Requires OPENAI_API_KEY
+
+```bash
+instruction_improver.py
+```
 
 ## Potential Applications
-
-Our framework has promising applications in various domains, including:
 
 - Automated Machine Learning (AutoML)
 - Natural Language Processing (NLP)
 - Data Science and Analytics
+
+This project is licensed under the MIT License.
