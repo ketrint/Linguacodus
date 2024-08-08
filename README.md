@@ -1,8 +1,5 @@
-# Machine Learning Pipelines Synthesis with Large Language Models
+This repository provides the official implementation for the **Machine Learning Pipelines Synthesis with Large Language Models**. It leverages large language models to automate the process of converting natural language descriptions of ML tasks into executable Python code.
 
-Paper official repository.
-
-Automatic transformation of Machine Learning (ML) task natural description into Python code through the textual instruction.
 
 ## Features
 - **Instruction Generation**: Creates detailed instructions for machine learning task solution using provided data.
@@ -12,58 +9,75 @@ Automatic transformation of Machine Learning (ML) task natural description into 
 
 ## Getting Started
 
-To use our framework, follow the steps outlined below:
+To get started with the framework, follow these steps:
 
-1. **Clone the Repository**: Begin by cloning this repository to your local machine.
+### 1. Clone the Repository
+Clone this repository to your local machine using the following command:
 
 ```bash
 git clone https://github.com/ketrint/Linguacodus.git
-
 cd Linguacodus
 ```
 
-2. **Create a Virtual Environment**
+### 2. Create a Virtual Environment
+Set up a virtual environment to manage dependencies:
+
 ```bash
 python -m venv env
-source env/bin/activate  # On Windows use `env\Scripts\activate`
+source env/bin/activate  # On Windows, use `env\Scripts\activate`
 ```
 
-3. **Install Required Packages**
+### 3. Install Required Packages
+Install the necessary Python packages using `pip`:
+
 ```bash
 pip install -r requirements.txt
 ```
 
-4. **Set Up OpenAI API Key**
-- Create a .env file in the root directory of the project.
-- Add your OpenAI API key to the .env file:
+### 4. Set Up OpenAI API Key
+To enable instruction refinement using OpenAI's GPT models, set up your API key:
 
-```env
+1. Create a `.env` file in the root directory of the project.
+2. Add your OpenAI API key to the `.env` file:
+
+```bash
 OPENAI_API_KEY=your_openai_api_key_here
 ```
 
 ## Usage
 
-**Llama 2 fine-tune**: fine-tune Llama 2 model to generate instructions by natural language tasks decriptions.
+The repository provides several scripts for different functionalities:
+
+### **1. Llama 2 Fine-Tuning**
+Fine-tune the Llama 2 model to generate instructions based on natural language task descriptions:
+
 ```bash
 python llamafinetune.py
 ```
 
-**Llama 2 inference**: infer top-3 instructions for a given ML task .
+### **2. Llama 2 Inference**
+Generate the top-3 instruction sets for a given machine learning task using the fine-tuned Llama 2 model:
+
 ```bash
 python llamainference.py
 ```
 
-**Instructions refinement**: choose the best out of three generated instructions and improve it.
-Requires OPENAI_API_KEY
+### **3. Instruction Refinement**
+Choose the best instruction from the generated options and refine it using OpenAI's GPT model. **Note:** This step requires an OpenAI API key.
 
 ```bash
-instruction_improver.py
+python instruction_improver.py
 ```
 
 ## Potential Applications
+
+This framework has broad applications across several domains, including:
 
 - Automated Machine Learning (AutoML)
 - Natural Language Processing (NLP)
 - Data Science and Analytics
 
-This project is licensed under the MIT License.
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+
