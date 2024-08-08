@@ -13,7 +13,7 @@ from peft import LoraConfig, PeftModel
 # Configuration variables
 MODEL_NAME = "NousResearch/Llama-2-7b-chat-hf"
 NEW_MODEL_PATH = "./models/llama-2-7b-supercode"
-CSV_FILEPATH = './data/inputs.csv'
+CSV_FILEPATH = './data/sample_inputs.csv'
 OUTPUT_FILEPATH = './data/results.csv'
 PIPELINE_CONFIG = {
     "task": "text-generation",

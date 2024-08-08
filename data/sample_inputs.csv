@@ -1,0 +1,92 @@
+title,task,data_type,metrics,data_card,submission,link
+Binary Classification of Machine Failures,"For each id in the test set, you must let’s predict the probability of a Machine failure.",tabular,roc,"train.csv - the training dataset; Machine failure is the (binary) target (which, in order to align with the ordering of the original dataset, is not in the last column position)
+test.csv - the test dataset; your objective is to predict the probability of Machine failure",,
+Binary Classification with a Tabular Credit Card Fraud Dataset.,Binary Classification with a Tabular Credit Card Fraud Dataset.,tabular,roc,"train.csv - the training dataset; Class is the target
+id, Time, V1, V2, V3, V4, V5, V6, V7, V8
+0, 0.0, 2.07432907884907, -0.129425495848231, -1.13741788352792, 0.412846470894789, -0.19263845121876, -1.21014377820496, 0.110696567997849, -0.263477471378489","Submission File
+For each id in the test set, you must predict the value for the target Class. The file should contain a header and have the following format:
+
+id,Class
+341588,0.23
+341589,0.92
+341590,0.02",https://www.kaggle.com/competitions/playground-series-s3e4
+Feature Imputation with a Heat Flux Dataset.,The dataset for this competition (both train and test) was generated from a deep learning model trained on the Predicting Critical Heat Flux dataset. ,tabular,rmse,"data.csv - the competition dataset; your objective is to impute the missing values of the feature x_e_out [-] (equilibrium quality), and data in any columns could be passed
+id, author, geometry, pressure [MPa], mass_flux [kg/m2-s], x_e_out [-], D_e [mm], D_h [mm], length [mm], chf_exp [MW/m2]
+9, Peskov, tube, 12.0, 1617.0, 0.1228, 10.0, 10.0, 520.0, 2.2","Submission File
+This is an imputation problem. You are to predict the missing values of the feature x_e_out [-] (with the corresponding row id). The file should contain a header and have the following format:
+
+id,x_e_out [-]
+4,0.00
+7.0.12
+10,-0.02",https://www.kaggle.com/competitions/playground-series-s3e15/
+"CommonLit - Evaluate
+Student Summaries","The goal of this competition is to assess the quality of summaries written by students in grades 3-12. You'll build a model that evaluates how well a student represents the main idea and details of a source text, as well as the clarity, precision, and fluency of the language used in the summary.","tabular, text",mean columnwise rmse,"- **summaries_train.csv** - Summaries in the training set.
+    - `student_id` - The ID of the student writer.
+    - `prompt_id` - The ID of the prompt which links to the prompt file.
+    - `text` - The full text of the student's summary.
+    - `content` - The content score for the summary. The first target.
+    - `wording` - The wording score for the summary. The second target.
+- **summaries_test.csv** - Summaries in the test set. Contains all fields above except `content` and `wording`.
+- **prompts_train.csv** - The four training set prompts. Each prompt comprises the complete summarization assignment given to students.
+    - `prompt_id` - The ID of the prompt which links to the summaries file.
+    - `prompt_question` - The specific question the students are asked to respond to.
+    - `prompt_title` - A short-hand title for the prompt.
+    - `prompt_text` - The full prompt text.
+- **prompts_test.csv** - The test set prompts. Contains the same fields as above. The prompts here are only an example. The full test set has a large number of prompts. The train / public test / private test splits do not share any prompts.","For each student_id in the test set, you must predict a value for each of the two analytic measures (described on the Data page). The file should contain a header and have the following format:
+student_id,content,wording
+000000ffffff,0.0,0.0
+111111eeeeee,0.0,0.0
+222222cccccc,0.0,0.0
+333333dddddd,0.0,0.0",https://www.kaggle.com/competitions/commonlit-evaluate-student-summaries
+"Stable Diffusion - Image to
+Prompts","The competition aims to develop a model that can predict the text prompt that corresponds to a given generated image, challenging the understanding of the relationship between text prompts and images in text-to-image models. The goal is to create embeddings for predicted prompts, ensuring robust prompt similarity assessment, and exploring prompt engineering in the context of image generation.",image,mean cosine similarity,"imgId, prompt
+20057f34d, hyper realistic photo of very friendly and dystopian crater
+227ef0887, ramen carved out of fractal rose ebony, in the style of hudson river school","For each image in the test set, you must predict the prompt that was used to generate the image and convert the prompt into a 384-length embedding vector. Predictions should be flattened to rows of image (imgId) and embedding (eId) pairs (imgId_eId). The file should contain a header and have the following format:
+
+imgId_eId,val
+20057f34d_0,0.018848453
+20057f34d_1,0.030189732",https://www.kaggle.com/competitions/stable-diffusion-image-to-prompts/overview
+"Regression with a Tabular
+California Housing Dataset","For each id in the test set, you must predict the value for the target MedHouseVal.",tabular,rmse,"test_set/ - the test set directory containing exactly 1490 image files.
+sample_submission.csv - a sample submission file in the correct format","For each id corresponding to an image file in the test-set/ directory, you must predict a class label for the class variable. The file should contain a header and have the following format:
+
+id,class
+a51f75effb1ddecbdc415f2c04856dca,No Hat
+4f1a9f55fec2af7a38e425098955b53e,No Hat
+494027738fc26f214792b9c389455528,No Hat
+07af6e551654de3d522a79f87801b288,No Hat
+fc965946777a2192bd76fc768a7a87d2,No Hat
+d9cee025cb3007e59f903724fc4ebab4,No Hat
+8207a51323622887aef5c7060705f9b8,No Hat
+877c11ba4e9f4f991bdd959b9a940929,No Hat
+9427c232457eb4f35230ef9557237956,No Hat
+38b77bdf40c69d39affe50e83f9ce1dd,No Hat",https://www.kaggle.com/competitions/playground-series-s3e1
+"Regression with a
+Crab Age Dataset","In this task, your objective is to build a predictive model for estimating the age of individuals. The test set consists of unique identifiers (IDs), and your challenge is to predict the target variable, ""Age,"" for each ID. Your model's success will be assessed based on its ability to accurately forecast the ages of individuals in the given test set. Ensure that your predictions are precise and aligned with the true ages, as this will be a key factor in evaluating the performance of your model",tabular,mae,"Files
+train.csv - the training dataset; Age is the target
+test.csv - the test dataset; your objective is to predict the probability of Age (the ground truth is int but you can predict int or float)
+sample_submission.csv - a sample submission file in the correct format
+
+train example:
+id, Sex, Length, Diameter, Height, Weight, Shucked Weight, Viscera Weight, Shell Weight, Age
+0, I, 1.525, 1.175, 0.375, 28.973189, 12.7289255, 6.64795775, 8.34892775, 9","Submission File
+For each id in the test set, you must predict the target Age. The file should contain a header and have the following format:
+
+id,yield
+74051,10.2
+74051,3.6
+74051,11.9
+etc.",https://www.kaggle.com/competitions/playground-series-s3e16/data
+Predict CO2 Emissions in Rwanda,"The objective of this challenge is to create a machine learning models using open-source CO2 emissions data from Sentinel-5P satellite observations to predict future carbon emissions. Approximately 497 unique locations were selected from multiple areas in Rwanda, with a distribution around farm lands, cities and power plants. The data for this competition is split by time; the years 2019 - 2021 are included in the training data, and your task is to predict the CO2 emissions data for 2022 through November. Seven main features were extracted weekly from Sentinel-5P from January 2019 to November 2022. Each feature (Sulphur Dioxide, Carbon Monoxide, etc) contain sub features such as column_number_density which is the vertical column density at ground level, calculated using the DOAS technique.",tabular,rmse,"Files
+train.csv - the training set
+test.csv - the test set; your task is to predict the emission target for each week at each location
+sample_submission.csv - a sample submission file in the correct format","Submission File
+For each ID_LAT_LON_YEAR_WEEK row in the test set, you must predict the value for the target emission. The file should contain a header and have the following format:
+
+ID_LAT_LON_YEAR_WEEK,emission
+ID_-0.510_29.290_2022_00,81.94
+ID_-0.510_29.290_2022_01,81.94
+ID_-0.510_29.290_2022_02,81.94
+etc.",https://www.kaggle.com/competitions/playground-series-s3e20/data
+Binary Classification with a Bank Churn Dataset,"Let’s predict whether a customer continues with their account or closes it (e.g., churns). For each id in the test set, you must predict the probability for the target variable Exited.",tabular,roc,,,https://www.kaggle.com/competitions/playground-series-s4e1
+Regression with a Wild Blueberry Yield Dataset,"For each id in the test set, you must predict the target yield.",tabular ,mae,,,https://www.kaggle.com/competitions/playground-series-s3e14

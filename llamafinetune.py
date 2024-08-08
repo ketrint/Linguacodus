@@ -23,7 +23,7 @@ from datasets import Dataset
 MODEL_NAME = "NousResearch/Llama-2-7b-chat-hf"
 NEW_MODEL_PATH = "./models/llama-2-7b-supercode"
 CSV_FILEPATH = '/data/input_prompts.csv'
-OUTPUT_DIR = "./results"
+OUTPUT_DIR = "./models"
 DEVICE_MAP = {"": 0}
 LORA_R = 64
 LORA_ALPHA = 16
