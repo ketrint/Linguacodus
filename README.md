@@ -1,4 +1,4 @@
-This repository provides the official implementation for the **Machine Learning Pipelines Synthesis with Large Language Models**. It leverages large language models to automate the process of converting natural language descriptions of ML tasks into executable Python code.
+This repository provides the official implementation for the **Linguacodus: A synergistic framework for transformative code generation in machine learning pipelines** instruction generation part. Linguacodus leverages large language models to automate the process of converting natural language descriptions of ML tasks into executable Python code.
 
 
 ## Features
@@ -55,6 +55,8 @@ Fine-tune the Llama 2 model to generate instructions based on natural language t
 python llamafinetune.py
 ```
 
+The script intputs input_prompts.csv files, containing pre-processed descriptions of machine learning tasks.
+
 ### **2. Llama 2 Inference**
 Generate the top-3 instruction sets for a given machine learning task using the fine-tuned Llama 2 model:
 
@@ -68,6 +70,8 @@ Choose the best instruction from the generated options and refine it using OpenA
 ```bash
 python instruction_improver.py
 ```
+
+The instructions are further converted to code with the sequential LLM propmting scheme.
 
 ## Potential Applications
 
