@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/839271561.svg)](https://zenodo.org/doi/10.5281/zenodo.13283826)
+
 This repository provides the official implementation for the **Linguacodus: A synergistic framework for transformative code generation in machine learning pipelines** instruction generation part. Linguacodus leverages large language models to automate the process of converting natural language descriptions of ML tasks into executable Python code.
 
 
